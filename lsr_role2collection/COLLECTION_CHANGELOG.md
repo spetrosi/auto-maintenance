@@ -1,6 +1,28 @@
 Changelog
 =========
 
+[2.0.0] - 2026-07-27
+---------------------
+
+### New Features
+
+- certificate - feat: manage system certificate trust, CA certificates (#341)
+- nbde_client - feat: Support extra dracut settings for static IP (#268)
+- podman - feat: prune unused images before pulling new ones during create/update (#312)
+- podman - feat: Add podman_run_as_ansible_user option (#307)
+- snapshot - feat: add support for revertable snapshots with boot-time rollback capability (#183)
+- timesync - feat: Support key and keyfile for authentication (#357)
+
+### Bug Fixes
+
+- aide - fix: Better support for check mode (#93)
+- bootloader - fix!: Do not enforce bootloader timeout default (#223)
+- bootloader - fix: Fix incorrect changed reporting in bootloader_settings module (#222)
+- bootloader - fix: Fix the role running grubby commands in check mode (#221)
+- bootloader - fix: Set mode for bootloader user and grub conf files to 0600 (#220)
+- nbde_client - fix: use hostonly_cmdline=yes on newer versions of OS (#267)
+- podman - fix: support kube specs with multiple Kubernetes objects (#303)
+
 [1.127.3] - 2026-07-23
 ---------------------
 
