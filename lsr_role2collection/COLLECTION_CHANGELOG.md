@@ -1,6 +1,43 @@
 Changelog
 =========
 
+[2.2.0] - 2026-08-07
+---------------------
+
+### New Features
+
+- ad_integration - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#208)
+- aide - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#100)
+- auditd - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#24)
+- cockpit - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#286)
+- fapolicyd - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#123)
+- gfs2 - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#114)
+- ha_cluster - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#412)
+- journald - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#170)
+- kernel_settings - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#325)
+- keylime_server - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#140)
+- logging - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#514)
+- metrics - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#334)
+- nbde_client - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#277)
+- nbde_server - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#252)
+- network - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#892)
+- podman - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#316)
+- postfix - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#249)
+- postgresql - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#200)
+- rhc - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#294)
+- snapshot - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#192)
+- ssh - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#254)
+- sudo - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#137)
+- systemd - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#158)
+- tlog - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#233)
+- trustee_client - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#46)
+- trustee_server - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#34)
+- vpn - feat: Write roles fingerprints to /var/log/sysroles.jsonl [citest_skip] (#269)
+
+### Bug Fixes
+
+- ha_cluster - fix: crmsh - Replace crm_verify with crm configure verify (#403)
+
 [2.1.0] - 2026-08-06
 ---------------------
 
