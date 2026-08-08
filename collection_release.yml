@@ -1,5 +1,5 @@
 mainid:
-  ref: 2.2.0
+  ref: 2.3.0
   sourcenum: 0
 postfix:
   ref: 1.9.0
@@ -38,7 +38,7 @@ nbde_client:
   ref: 1.7.0
   sourcenum: 12
 certificate:
-  ref: 1.8.0
+  ref: 1.9.0
   sourcenum: 13
 crypto_policies:
   ref: 1.8.0
@@ -52,7 +52,7 @@ ssh:
   ref: 1.9.0
   sourcenum: 16
 ha_cluster:
-  ref: 1.32.0
+  ref: 1.32.1
   sourcenum: 17
 vpn:
   ref: 1.9.0

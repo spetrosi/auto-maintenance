@@ -1,6 +1,17 @@
 Changelog
 =========
 
+[2.3.0] - 2026-08-08
+---------------------
+
+### New Features
+
+- certificate - feat: Implement support for passing an issuer argument to the provider. (#346)
+
+### Bug Fixes
+
+- certificate - fix: ensure role is idempotent (#355)
+
 [2.2.0] - 2026-08-07
 ---------------------
 
