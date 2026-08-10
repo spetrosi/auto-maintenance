@@ -1,6 +1,17 @@
 Changelog
 =========
 
+[2.4.0] - 2026-08-10
+---------------------
+
+### New Features
+
+- sshd - feat: Write roles fingerprints to /var/log/sysroles.jsonl (#381)
+
+### Bug Fixes
+
+- podman - fix: re-order tasks to allow prune_images to complete on a new host (#318)
+
 [2.3.0] - 2026-08-08
 ---------------------
 

@@ -1,5 +1,5 @@
 mainid:
-  ref: 2.3.0
+  ref: 2.4.0
   sourcenum: 0
 postfix:
   ref: 1.9.0
@@ -8,7 +8,7 @@ selinux:
   ref: 1.13.0
   sourcenum: 2
 timesync:
-  ref: 1.14.0
+  ref: 1.14.1
   sourcenum: 3
 kdump:
   ref: 1.7.0
@@ -23,7 +23,7 @@ metrics:
   ref: 1.17.0
   sourcenum: 7
 tlog:
-  ref: 1.6.0
+  ref: 1.6.1
   sourcenum: 8
 kernel_settings:
   ref: 1.5.0
@@ -45,7 +45,7 @@ crypto_policies:
   sourcenum: 14
 sshd:
   org: willshersystems
-  ref: v0.33.1
+  ref: v0.34.0
   repo: ansible-sshd
   sourcenum: 15
 ssh:
@@ -64,7 +64,7 @@ cockpit:
   ref: 1.9.0
   sourcenum: 20
 podman:
-  ref: 1.14.0
+  ref: 1.14.1
   sourcenum: 21
 ad_integration:
   ref: 1.9.0
