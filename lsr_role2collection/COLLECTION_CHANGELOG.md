@@ -1,6 +1,13 @@
 Changelog
 =========
 
+[2.4.1] - 2026-08-20
+---------------------
+
+### Bug Fixes
+
+- systemd - fix: ansible 2.19+ removed invocation as part of the data rework. also fixed some tests (#163)
+
 [2.4.0] - 2026-08-10
 ---------------------
 

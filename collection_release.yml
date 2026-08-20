@@ -1,5 +1,5 @@
 mainid:
-  ref: 2.4.0
+  ref: 2.4.1
   sourcenum: 0
 postfix:
   ref: 1.9.0
@@ -38,7 +38,7 @@ nbde_client:
   ref: 1.7.0
   sourcenum: 12
 certificate:
-  ref: 1.9.0
+  ref: 1.9.1
   sourcenum: 13
 crypto_policies:
   ref: 1.8.0
@@ -79,7 +79,7 @@ postgresql:
   ref: 1.8.0
   sourcenum: 25
 systemd:
-  ref: 1.5.0
+  ref: 1.5.1
   sourcenum: 26
 keylime_server:
   ref: 1.4.0
