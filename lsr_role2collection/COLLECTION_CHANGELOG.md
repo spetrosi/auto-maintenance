@@ -1,6 +1,13 @@
 Changelog
 =========
 
+[2.4.2] - 2026-08-24
+---------------------
+
+### Bug Fixes
+
+- podman - fix(quadlet_spec_paths): Test for file_src and template_src for restart should use length gt 0 (#325)
+
 [2.4.1] - 2026-08-20
 ---------------------
 
