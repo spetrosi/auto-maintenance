@@ -76,6 +76,14 @@ jobs:
           echo "tagname=$NEWVER" >> $GITHUB_OUTPUT
           echo "updated=1" >> $GITHUB_OUTPUT
 
+      - name: Keep latest 20 versions in Galaxy
+        shell: bash
+        run: |
+          set -euxo pipefail
+          python3 ./remove_old_galaxy_versions.py --keep 20
+        env:
+          GALAXY_API_KEY: ${{ secrets.GALAXY_API_KEY }}
+
       - name: Create tag
         if: ${{ steps.build.outputs.updated == 1 }}
         uses: mathieudutour/github-tag-action@a22cf08638b34d5badda920f9daf6e72c477b07b # v6.2
