@@ -15,6 +15,7 @@ import urllib.request
 from packaging.version import InvalidVersion, Version
 
 DEFAULT_SERVER = "https://galaxy.ansible.com"
+REQUEST_TIMEOUT = 30
 LIST_PATH = (
     "/api/v3/plugin/ansible/content/published/collections/index/"
     "{namespace}/{name}/versions/"
@@ -26,7 +27,7 @@ def api_request(url, token, method="GET"):
     req = urllib.request.Request(url, method=method)
     req.add_header("Authorization", "Token " + token)
     req.add_header("Accept", "application/json")
-    with urllib.request.urlopen(req) as resp:
+    with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
         body = resp.read().decode("utf-8")
         return resp.status, body
 
@@ -82,16 +83,25 @@ def main():
     if not args.token:
         sys.exit("No Galaxy token provided (use --token or $GALAXY_API_KEY)")
 
-    versions = sort_versions(list_versions(args.server, args.token, args.namespace, args.name))
+    keep = args.keep
+    if keep < 1:
+        sys.exit("--keep must be at least 1")
+
+    versions = sort_versions(
+        list_versions(args.server, args.token, args.namespace, args.name)
+    )
     print("Found %d versions of %s.%s" % (len(versions), args.namespace, args.name))
 
-    to_delete = versions[args.keep :]
+    to_delete = versions[keep:]
     if not to_delete:
-        print("Nothing to delete - %d versions <= keep limit %d" % (len(versions), args.keep))
+        print(
+            "Nothing to delete - %d versions <= keep limit %d" % (len(versions), keep)
+        )
         return
 
-    print("Keeping newest %d, deleting %d older versions" % (args.keep, len(to_delete)))
+    print("Keeping newest %d, deleting %d older versions" % (keep, len(to_delete)))
     base = args.server + LIST_PATH.format(namespace=args.namespace, name=args.name)
+    failures = 0
     for version in to_delete:
         url = base + version + "/"
         if args.dry_run:
@@ -100,8 +110,14 @@ def main():
         try:
             status, _ = api_request(url, args.token, method="DELETE")
             print("Deleted %s (status %s)" % (version, status))
-        except urllib.error.HTTPError as err:
-            print("Failed to delete %s: %s %s" % (version, err.code, err.reason))
+        except urllib.error.URLError as err:
+            code = getattr(err, "code", "")
+            reason = getattr(err, "reason", err)
+            print("Failed to delete %s: %s %s" % (version, code, reason))
+            failures += 1
+
+    if failures:
+        sys.exit("%d version(s) failed to delete" % failures)
 
 
 if __name__ == "__main__":
